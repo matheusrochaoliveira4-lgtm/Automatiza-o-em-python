@@ -1,0 +1,30 @@
+import pyautogui
+import time
+
+# 1. Pequena pausa de segurança
+# Se o código ficar "louco", leve o mouse para o canto superior esquerdo da tela para parar.
+pyautogui.PAUSE = 1.0
+
+def automatizar_bloco_de_notas():
+    print("Iniciando automação... Não mexa no mouse!")
+
+    # 2. Abre o menu de busca (Windows: Win / Mac: Command+Space)
+    # Vou usar a tecla 'win' como padrão para Windows
+    pyautogui.press('win')
+    time.sleep(1) # Espera o menu carregar
+
+    # 3. Digita o nome do programa e dá Enter
+    pyautogui.write('bloco de notas', interval=0.1)
+    pyautogui.press('enter')
+    
+    # 4. Espera o programa abrir totalmente
+    time.sleep(2)
+
+    # 5. Digita a frase desejada
+    frase = "Olá! Este é um teste de automação criado com Python e PyAutoGUI."
+    pyautogui.write(frase, interval=0.1)
+
+    print("Tarefa concluída!")
+
+if __name__ == "__main__":
+    automatizar_bloco_de_notas()
